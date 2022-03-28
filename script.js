@@ -1,0 +1,155 @@
+"use strict";
+const taskInput = document.querySelector(".tast-input input"),
+    fillters = document.querySelectorAll(".fillters span"),
+    clearAll = document.querySelector(".clear-btn"),
+    taskBox = document.querySelector(".task-box");
+
+let editId;
+let isEditedTask = false;
+
+// getting localstorage todo-list
+let todos = JSON.parse(localStorage.getItem("todo-list"));
+
+// fillters.forEach(btn => {
+//     btn.addEventListener("click", () => {
+//         console.log(btn);
+//     });
+// });
+
+fillters.forEach(btn => {
+    btn.addEventListener("click", () => {
+        document.querySelector("span.active").classList.remove("active");
+        btn.classList.add("active");
+        showTodo(btn.id);
+    });
+});
+
+function showTodo(fillter) {
+    let li = "";
+    if (todos) {
+        todos.forEach((todo, id) => {
+            // if todo status is completed, set the isCompleted value to checked
+            let isCompleted = todo.status == "completed" ? "checked" : "";
+            if (fillter == todo.status || fillter == "all") {
+                li += `<li class="task">
+                            <label for="${id}">
+                                <input onclick="updateStatus(this)" type="checkbox" id="${id}" ${isCompleted} />
+                                <p class="${isCompleted}">${todo.name}</p>
+                            </label>
+                            <div class="settings">
+                                <i onclick="showMenu(this)" class="fas fa-eraser"></i>
+                                <ul class="task-menu">
+                                    <li onclick="editTask(${id}, '${todo.name}')"><i class="fas fa-pen"></i>Edit</li>
+                                    <li onclick="deleteTask(${id})"><i class="fas fa-trash"></i>Delete</li>
+                                </ul>
+                            </div>
+                        </li>`;
+            }
+        });
+    }
+    // if li isnt empty, insert this value inside taskbox else insert span
+    taskBox.innerHTML = li || `<span>You don't have any task here.</span>`;
+}
+showTodo("all");
+
+function showMenu(selectedTask) {
+    // getting task menu div
+    let taskMenu = selectedTask.parentElement.lastElementChild;
+    taskMenu.classList.add("show");
+    document.addEventListener("click", e => {
+        // removing show class from the tesk menu on the document click
+        if (e.target.tagName != "I" || e.target != selectedTask) {
+            taskMenu.classList.remove("show");
+        }
+    });
+}
+
+function editTask(taskId, taskName) {
+    editId = taskId;
+    isEditedTask = true;
+    taskInput.value = taskName;
+    document.getElementById("focus").focus();
+}
+
+function deleteTask(deleteId) {
+    if (!document.getElementById("all").classList.contains("active") && taskBox.firstElementChild.tagName == "SPAN") {
+        document.getElementById("pending").classList.remove("active");
+        document.getElementById("completed").classList.remove("active");
+        document.getElementById("all").classList.add("active");
+    }
+
+    // getting selected task from array/todos
+    todos.splice(deleteId, 1);
+    localStorage.setItem("todo-list", JSON.stringify(todos));
+    showTodo("all");
+}
+
+clearAll.addEventListener("click", () => {
+    let currentStatus = taskBox.firstElementChild.tagName;
+
+    if (!document.getElementById("all").classList.contains("active") && currentStatus == "SPAN") {
+        document.getElementById("all").classList.add("active");
+        document.getElementById("pending").classList.remove("active");
+        document.getElementById("completed").classList.remove("active");
+    }
+
+    // if (currentStatus == "SPAN") {
+    //     console.log(currentStatus);
+    //     if (!document.getElementById("all").classList.contains("active")) {
+    //         document.getElementById("all").classList.add("active");
+    //         document.getElementById("pending").classList.remove("active");
+    //         document.getElementById("completed").classList.remove("active");
+    //     }
+    // }
+    // console.log(taskBox.firstElementChild.tagName == "SPAN");
+
+    // getting all items of array/todos
+    todos.splice(0, todos.length);
+    localStorage.setItem("todo-list", JSON.stringify(todos));
+    showTodo("all");
+});
+
+function updateStatus(selectedTask) {
+    // getting paragraph that contains task name
+    let taskName = selectedTask.parentElement.lastElementChild;
+    if (selectedTask.checked) {
+        taskName.classList.add("checked");
+        // updating the status of selected task to completed
+        todos[selectedTask.id].status = "completed";
+    } else {
+        taskName.classList.remove("checked");
+        // updating the status of selected task to pending
+        todos[selectedTask.id].status = "pending";
+    }
+    localStorage.setItem("todo-list", JSON.stringify(todos));
+}
+
+taskInput.addEventListener("keyup", e => {
+    let userTask = taskInput.value.trim();
+    if (e.key == "Enter" && userTask) {
+        if (!isEditedTask) {
+            //if isEditedTask isnt true
+            if (!todos) {
+                // if todo isnt exist, pass an empty array to todos
+                todos = [];
+            }
+            let taskInfo = {
+                name: userTask,
+                status: "pending",
+            };
+            todos.push(taskInfo); // Adding new task to todos
+        } else {
+            isEditedTask = true;
+            todos[editId].name = userTask;
+        }
+        if (!document.getElementById("all").classList.contains("active")) {
+            document.getElementById("all").classList.add("active");
+            document.getElementById("pending").classList.remove("active");
+            document.getElementById("completed").classList.remove("active");
+        }
+
+        taskInput.value = "";
+        localStorage.setItem("todo-list", JSON.stringify(todos));
+        showTodo("all");
+    }
+});

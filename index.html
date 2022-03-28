@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css" />
+        <script src="https://kit.fontawesome.com/2310046e07.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <header>
+            <div class="nav-wrapper">
+                <div class="nav max-width">
+                    <a class="logo" href="">
+                        <h1>hoon.</h1>
+                    </a>
+                </div>
+            </div>
+        </header>
+        <main>
+            <section class="conent">
+                <div class="todo-list-wrapper">
+                    <div class="tittle">
+                        <div class="project-name">
+                            <span>Javascript project</span>
+                        </div>
+                        <div class="tittle-name">
+                            <h1>TODO LIST</h1>
+                            <span>Stored in LocalStorage</span>
+                        </div>
+                    </div>
+                    <div class="tast-input-box">
+                        <div class="tast-input">
+                            <i class="fas fa-bars"></i>
+                            <input id="focus" type="text" placeholder="Add a new task" />
+                        </div>
+                        <div class="controls">
+                            <div class="fillters">
+                                <span id="all" class="active">All</span>
+                                <span id="pending">Pending</span>
+                                <span id="completed">Completed</span>
+                            </div>
+                            <button class="clear-btn">Clear All</button>
+                        </div>
+                    </div>
+                    <div class="todo-list">
+                        <ul class="task-box"></ul>
+                    </div>
+                    <div class="todo-list-bottom-shadow"></div>
+                </div>
+            </section>
+        </main>
+
+        <script src="script.js"></script>
+    </body>
+</html>
