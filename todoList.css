@@ -49,7 +49,7 @@ body header .nav-wrapper .nav .logo {
 }
 
 body main .background {
-  background: #222;
+  background: #333;
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -118,8 +118,8 @@ body main .background .todo-list {
   position: relative;
   padding-bottom: 50px;
   border-radius: 8px;
-  -webkit-box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
-          box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 25px 35px 15px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 25px 35px 15px rgba(0, 0, 0, 0.2);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -258,8 +258,8 @@ body main .background .todo-list .controls .clear-btn {
   border: 1px dashed #999999;
   border-radius: 4px;
   outline: none;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
   cursor: pointer;
 }
 

@@ -48,7 +48,7 @@ body {
 
     main {
         .background {
-            background: #222;
+            background: #333;
             height: 100vh;
 
             display: flex;
@@ -107,7 +107,7 @@ body {
                 position: relative;
                 padding-bottom: 50px;
                 border-radius: 8px;
-                box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
+                box-shadow: 0px 25px 35px 15px rgba(0, 0, 0, 0.2);
 
                 display: flex;
                 justify-content: center;
