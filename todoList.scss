@@ -1,4 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Handlee&family=Orbitron&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Handlee&family=Orbitron&family=Patrick+Hand&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+$pencil-color: rgba(54, 54, 54, 0.8);
+$primary-color: rgba(82, 82, 82, 1);
+$primary-pattern: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+
 * {
     margin: 0;
     padding: 0;
@@ -17,18 +22,18 @@ body {
 
     header {
         .nav-wrapper {
-            position: fixed;
             background: #111111;
+            position: fixed;
             top: 0;
             color: #fff;
             width: 100%;
             height: 60px;
-            // box-shadow: 0 5px 25px rgba(14, 21, 37, 0.5);
             filter: drop-shadow(0 -5px 10px rgb(170, 170, 170));
 
             .nav {
                 width: 100%;
                 height: 100%;
+
                 display: flex;
                 justify-content: left;
                 align-items: center;
@@ -42,7 +47,7 @@ body {
     }
 
     main {
-        .conent {
+        .background {
             background: #222;
             height: 100vh;
 
@@ -50,9 +55,59 @@ body {
             justify-content: center;
             align-items: center;
 
-            .todo-list-wrapper {
-                padding: 20px 0;
+            .tittle,
+            .tittle::before {
+                border-top-left-radius: 8px;
+                border-top-right-radius: 8px;
+            }
+
+            .tittle::before {
+                content: "";
+                background: linear-gradient(0deg, rgba(34, 34, 34, 0.5022727272727272) 0%, rgba(34, 34, 34, 1) 100%);
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 30px;
+                border-top: 1px solid rgba(153, 153, 153, 0.2);
+                border-bottom: 1px dashed rgba(153, 153, 153, 1);
+            }
+            .tittle::after {
+                content: "";
+                background: linear-gradient(180deg, rgba(34, 34, 34, 0.5022727272727272) 0%, rgba(34, 34, 34, 1) 100%);
+                position: absolute;
+                top: 31px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 100%;
+                height: 10px;
+                box-shadow: 0 5px 10px rgba(14, 21, 37, 0.6);
+            }
+
+            .todo-list::before {
+                content: "";
+                // background-color: $primary-color;
+                // background-image: $primary-pattern;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 48px;
+                border-top: 1px solid rgba(153, 153, 153, 0.2);
+                border-bottom: 1px solid rgba(153, 153, 153, 0.5);
+                border-bottom-left-radius: 8px;
+                border-bottom-right-radius: 8px;
+                box-shadow: 0 -5px 10px rgba(14, 21, 37, 0.5);
+                z-index: 444;
+            }
+
+            .todo-list {
+                background-color: $primary-color;
+                background-image: $primary-pattern;
+                position: relative;
+                padding-bottom: 50px;
                 border-radius: 8px;
+                box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
 
                 display: flex;
                 justify-content: center;
@@ -60,17 +115,15 @@ body {
                 flex-direction: column;
 
                 .tittle {
-                    background: #fff;
-                    color: #222;
-                    width: 100%;
-                    padding: 18px;
+                    background-color: $primary-color;
+                    background-image: $primary-pattern;
+                    color: #fff;
                     line-height: 1.4;
-                    border-top-left-radius: 8px;
-                    border-top-right-radius: 8px;
+                    width: 100%;
+                    padding: 50px 18px 25px;
 
                     .project-name {
                         span {
-                            color: #696969;
                             font-size: 0.8em;
                             font-weight: 400;
                         }
@@ -82,36 +135,33 @@ body {
                             font-weight: 700;
                         }
                         span {
-                            color: #696969;
                             font-size: 1em;
                             font-weight: 400;
                         }
                     }
                 }
 
-                .tast-input-box {
+                .task-nav {
+                    background-color: $primary-color;
+                    background-image: $primary-pattern;
                     position: relative;
                     width: 100%;
-                    background: #fff;
-                    border-top: 1px solid #ccc;
-                    border-bottom: 1px solid #ccc;
-                    box-shadow: 0 5px 10px rgba(14, 21, 37, 0.1);
                     padding: 18px 25px;
+                    border-bottom: 1px solid #999;
+                    box-shadow: 0 5px 10px rgba(14, 21, 37, 0.5);
                     z-index: 111;
 
-                    .tast-input {
-                        height: 52px;
-                        // padding: 0 25px;
+                    .task-input {
                         position: relative;
+                        height: 52px;
 
                         input {
+                            font-size: 18px;
                             height: 100%;
                             width: 100%;
-                            // outline: none;
-                            font-size: 18px;
-                            border-radius: 5px;
-                            border: 1px solid #999;
                             padding: 0 20px 0 53px;
+                            border: 1px solid #999;
+                            border-radius: 5px;
 
                             :focus {
                                 outline: #3c87ff;
@@ -131,45 +181,56 @@ body {
                     }
                 }
                 .controls {
+                    color: #fff;
+                    margin-top: 18px;
+
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
-                    margin-top: 18px;
-                    // padding: 18px 25px;
 
                     .fillters {
                         span {
-                            cursor: pointer;
-                            margin: 0 8px;
+                            color: rgba(153, 153, 153, 1);
                             font-size: 1em;
-                            font-weight: 300;
+                            font-weight: 400;
+                            padding: 4px 8px;
+                            margin: 0 8px;
+                            transition: 0.4s ease-in-out;
+                            border: 1px dashed rgba(153, 153, 153, 1);
+                            border-radius: 4px;
+                            cursor: pointer;
                         }
                         span:first-child {
                             margin-left: 0;
                         }
 
                         span.active {
-                            color: #3c87ff;
+                            color: #fff;
+                            box-shadow: 0 5px 10px rgba(14, 21, 37, 0.6);
                         }
                     }
 
                     .clear-btn {
-                        outline: none;
-                        border: none;
-                        color: #fff;
-                        cursor: pointer;
-                        font-size: 13px;
+                        background: transparent;
+                        color: rgba(153, 153, 153, 1);
+                        font-size: 1em;
+                        padding: 4px 8px;
+                        border: 1px dashed rgba(153, 153, 153, 1);
                         border-radius: 4px;
-                        padding: 7px 13px;
-                        background: #3c87ff;
+                        outline: none;
+                        transition: 0.2s ease-in-out;
+                        cursor: pointer;
+                    }
+                    .clear-btn:hover {
+                        color: #fff;
+                        box-shadow: 0 5px 10px rgba(14, 21, 37, 0.6);
                     }
                 }
 
-                .todo-list {
+                .lists-container {
+                    background: #fff;
                     width: 480px;
                     margin: 0 auto;
-                    background: #fff;
-                    // border-top: 1px solid #ccc;
 
                     .controls,
                     li {
@@ -179,52 +240,49 @@ body {
                     }
 
                     .task-box:before {
+                        content: "";
+                        background: rgba(214, 0, 0, 0.4);
                         position: absolute;
                         top: 0;
                         left: 90px;
-                        content: "";
-                        background: rgba(214, 0, 0, 0.4);
                         width: 1px;
                         height: 100%;
                     }
                     .task-box:after {
+                        content: "";
+                        background: rgba(214, 0, 0, 0.4);
                         position: absolute;
                         top: 0;
                         left: 93px;
-                        content: "";
-                        background: rgba(214, 0, 0, 0.4);
                         width: 1px;
                         height: 100%;
                     }
+
                     .task-box {
+                        background: #fdff8a;
                         position: relative;
                         padding: 20px 25px;
-                        background: #fdff8a;
 
                         .task {
-                            // background: green;
                             height: 36px;
-                            list-style: none;
                             font-size: 1em;
-                            // margin-bottom: 18px;
-                            // padding-bottom: 16px;
-                            // border-bottom: 1px solid #ccc;
                             border-bottom: 2px solid rgba(97, 221, 255, 0.4);
+                            list-style: none;
 
                             display: flex;
                             align-items: center;
 
                             label {
-                                // background: crimson;
-                                color: rgba(54, 54, 54, 0.8);
                                 display: flex;
 
                                 input {
-                                    // margin-top: 6px;
-                                    // margin-right: 12px;
                                     margin: auto 60px auto 24px;
-                                    // margin-left: 24px;
-                                    // margin-right: 60px;
+                                }
+
+                                p {
+                                    color: $pencil-color;
+                                    font-family: "Handlee", cursive;
+                                    font-size: 1.2em;
                                 }
 
                                 p.checked {
@@ -233,26 +291,24 @@ body {
                             }
 
                             .settings {
+                                color: $pencil-color;
                                 position: relative;
-                                cursor: pointer;
                                 margin-right: 24px;
-
-                                i {
-                                    color: rgba(54, 54, 54, 0.8);
-                                }
+                                cursor: pointer;
 
                                 .task-menu {
-                                    position: absolute;
                                     background: #fff;
+                                    position: absolute;
                                     right: -5px;
                                     bottom: -55px;
                                     padding: 5px 0;
                                     border-radius: 5px;
                                     box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+
+                                    transition: transform 0.2s ease;
                                     transform: scale(0);
                                     transform-origin: top right;
-                                    transition: transform 0.2s ease;
-                                    z-index: 2;
+                                    z-index: 333;
 
                                     li {
                                         height: 25px;
@@ -283,18 +339,27 @@ body {
                             padding-bottom: 0;
                             border-bottom: 0;
                         }
+
+                        .no-task {
+                            color: $pencil-color;
+                            font-family: "Handlee", cursive;
+                            font-size: 1.2em;
+                            margin-left: 98px;
+                        }
                     }
                 }
-                .todo-list-bottom-shadow {
-                    background: #fff;
-                    width: 100%;
-                    height: 25px;
-                    border-top: 1px solid #ccc;
-                    border-bottom-left-radius: 8px;
-                    border-bottom-right-radius: 8px;
-                    box-shadow: 0 -5px 10px rgba(14, 21, 37, 0.1);
-                    z-index: 111;
-                }
+                // .list-bottom {
+                //     background: $primary-color;
+                //     background-image: $primary-pattern;
+                //     width: 100%;
+                //     height: 50px;
+                //     border-top: 1px solid rgba(153, 153, 153, 0.2);
+                //     border-bottom: 1px solid rgba(153, 153, 153, 0.5);
+                //     border-bottom-left-radius: 8px;
+                //     border-bottom-right-radius: 8px;
+                //     box-shadow: 0 -5px 10px rgba(14, 21, 37, 0.3);
+                //     z-index: 111;
+                // }
             }
         }
     }

@@ -1,5 +1,5 @@
 "use strict";
-const taskInput = document.querySelector(".tast-input input"),
+const taskInput = document.querySelector(".task-input input"),
     fillters = document.querySelectorAll(".fillters span"),
     clearAll = document.querySelector(".clear-btn"),
     taskBox = document.querySelector(".task-box");
@@ -7,8 +7,8 @@ const taskInput = document.querySelector(".tast-input input"),
 let editId;
 let isEditedTask = false;
 
-// getting localstorage todo-list
-let todos = JSON.parse(localStorage.getItem("todo-list"));
+// getting localstorage lists-container
+let todos = JSON.parse(localStorage.getItem("lists-container"));
 
 // fillters.forEach(btn => {
 //     btn.addEventListener("click", () => {
@@ -39,7 +39,7 @@ function showTodo(fillter) {
                             <div class="settings">
                                 <i onclick="showMenu(this)" class="fas fa-eraser"></i>
                                 <ul class="task-menu">
-                                    <li onclick="editTask(${id}, '${todo.name}')"><i class="fas fa-pen"></i>Edit</li>
+                                    <li onclick="editTask(${id}, '${todo.name}')"><i class="fas fa-user-edit"></i>Edit</li>
                                     <li onclick="deleteTask(${id})"><i class="fas fa-trash"></i>Delete</li>
                                 </ul>
                             </div>
@@ -48,7 +48,7 @@ function showTodo(fillter) {
         });
     }
     // if li isnt empty, insert this value inside taskbox else insert span
-    taskBox.innerHTML = li || `<span>You don't have any task here.</span>`;
+    taskBox.innerHTML = li || `<span class="no-task">You don't have any task here.</span>`;
 }
 showTodo("all");
 
@@ -80,7 +80,7 @@ function deleteTask(deleteId) {
 
     // getting selected task from array/todos
     todos.splice(deleteId, 1);
-    localStorage.setItem("todo-list", JSON.stringify(todos));
+    localStorage.setItem("lists-container", JSON.stringify(todos));
     showTodo("all");
 }
 
@@ -105,7 +105,7 @@ clearAll.addEventListener("click", () => {
 
     // getting all items of array/todos
     todos.splice(0, todos.length);
-    localStorage.setItem("todo-list", JSON.stringify(todos));
+    localStorage.setItem("lists-container", JSON.stringify(todos));
     showTodo("all");
 });
 
@@ -121,7 +121,7 @@ function updateStatus(selectedTask) {
         // updating the status of selected task to pending
         todos[selectedTask.id].status = "pending";
     }
-    localStorage.setItem("todo-list", JSON.stringify(todos));
+    localStorage.setItem("lists-container", JSON.stringify(todos));
 }
 
 taskInput.addEventListener("keyup", e => {
@@ -149,7 +149,7 @@ taskInput.addEventListener("keyup", e => {
         }
 
         taskInput.value = "";
-        localStorage.setItem("todo-list", JSON.stringify(todos));
+        localStorage.setItem("lists-container", JSON.stringify(todos));
         showTodo("all");
     }
 });
