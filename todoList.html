@@ -21,33 +21,35 @@
         <main>
             <section class="background">
                 <div class="todo-list">
-                    <div class="tittle">
-                        <div class="project-name">
-                            <span>Javascript project</span>
-                        </div>
-                        <div class="tittle-name">
-                            <h1>TODO LIST</h1>
-                            <span>Stored in LocalStorage</span>
-                        </div>
-                    </div>
-                    <div class="task-nav">
-                        <div class="task-input">
-                            <i class="fas fa-align-left"></i>
-                            <input id="focus" type="text" placeholder="Add a new task" />
-                        </div>
-                        <div class="controls">
-                            <div class="fillters">
-                                <span id="all" class="active">All</span>
-                                <span id="pending">Pending</span>
-                                <span id="completed">Completed</span>
+                    <div class="el-container">
+                        <div class="tittle">
+                            <div class="project-name">
+                                <span>Javascript project</span>
                             </div>
-                            <button class="clear-btn">Clear All</button>
+                            <div class="tittle-name">
+                                <h1>TODO LIST</h1>
+                                <span>Stored in LocalStorage</span>
+                            </div>
+                        </div>
+                        <div class="task-nav">
+                            <div class="task-input">
+                                <i class="fas fa-align-left"></i>
+                                <input id="focus" type="text" placeholder="Add a new task" />
+                            </div>
+                            <div class="controls">
+                                <div class="fillters">
+                                    <span id="all" class="active">All</span>
+                                    <span id="pending">Pending</span>
+                                    <span id="completed">Completed</span>
+                                </div>
+                                <button class="clear-btn">Clear All</button>
+                            </div>
                         </div>
                     </div>
                     <div class="lists-container">
                         <ul class="task-box"></ul>
                     </div>
-                    <!-- <div class="list-bottom"></div> -->
+                    <span class="list-bottom-end"></span>
                 </div>
             </section>
         </main>

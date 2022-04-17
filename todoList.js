@@ -10,12 +10,6 @@ let isEditedTask = false;
 // getting localstorage lists-container
 let todos = JSON.parse(localStorage.getItem("lists-container"));
 
-// fillters.forEach(btn => {
-//     btn.addEventListener("click", () => {
-//         console.log(btn);
-//     });
-// });
-
 fillters.forEach(btn => {
     btn.addEventListener("click", () => {
         document.querySelector("span.active").classList.remove("active");
@@ -92,16 +86,6 @@ clearAll.addEventListener("click", () => {
         document.getElementById("pending").classList.remove("active");
         document.getElementById("completed").classList.remove("active");
     }
-
-    // if (currentStatus == "SPAN") {
-    //     console.log(currentStatus);
-    //     if (!document.getElementById("all").classList.contains("active")) {
-    //         document.getElementById("all").classList.add("active");
-    //         document.getElementById("pending").classList.remove("active");
-    //         document.getElementById("completed").classList.remove("active");
-    //     }
-    // }
-    // console.log(taskBox.firstElementChild.tagName == "SPAN");
 
     // getting all items of array/todos
     todos.splice(0, todos.length);

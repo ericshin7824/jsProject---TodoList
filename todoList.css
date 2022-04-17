@@ -62,160 +62,99 @@ body main .background {
           align-items: center;
 }
 
-body main .background .tittle,
-body main .background .tittle::before {
+body main .background .todo-list {
+  position: relative;
+  width: 480px;
+  -webkit-box-shadow: 16px 20px 12px -8px rgba(0, 0, 0, 0.6), 16px 20px 20px 0 rgba(180, 180, 180, 0.1);
+          box-shadow: 16px 20px 12px -8px rgba(0, 0, 0, 0.6), 16px 20px 20px 0 rgba(180, 180, 180, 0.1);
+}
+
+body main .background .todo-list .el-container {
+  position: relative;
+  z-index: 8888;
+  background-color: #525252;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+  width: 100%;
+  padding: 50px 18px 18px;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
+  -webkit-box-shadow: 0 1px 1px 0 rgba(160, 160, 160, 0.4), inset -1px 0 1px 0 rgba(160, 160, 160, 0.4), 0 3px 3px 0 rgba(0, 0, 0, 0.4), 0 7px 7px 0 rgba(0, 0, 0, 0.4);
+          box-shadow: 0 1px 1px 0 rgba(160, 160, 160, 0.4), inset -1px 0 1px 0 rgba(160, 160, 160, 0.4), 0 3px 3px 0 rgba(0, 0, 0, 0.4), 0 7px 7px 0 rgba(0, 0, 0, 0.4);
 }
 
-body main .background .tittle::before {
-  content: "";
-  background: -webkit-gradient(linear, left bottom, left top, from(rgba(34, 34, 34, 0.502273)), to(#222222));
-  background: linear-gradient(0deg, rgba(34, 34, 34, 0.502273) 0%, #222222 100%);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 30px;
-  border-top: 1px solid rgba(153, 153, 153, 0.2);
-  border-bottom: 1px dashed #999999;
-}
-
-body main .background .tittle::after {
-  content: "";
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(34, 34, 34, 0.502273)), to(#222222));
-  background: linear-gradient(180deg, rgba(34, 34, 34, 0.502273) 0%, #222222 100%);
-  position: absolute;
-  top: 31px;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  width: 100%;
-  height: 10px;
-  -webkit-box-shadow: 0 5px 10px rgba(14, 21, 37, 0.6);
-          box-shadow: 0 5px 10px rgba(14, 21, 37, 0.6);
-}
-
-body main .background .todo-list::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 48px;
-  border-top: 1px solid rgba(153, 153, 153, 0.2);
-  border-bottom: 1px solid rgba(153, 153, 153, 0.5);
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
-  -webkit-box-shadow: 0 -5px 10px rgba(14, 21, 37, 0.5);
-          box-shadow: 0 -5px 10px rgba(14, 21, 37, 0.5);
-  z-index: 444;
-}
-
-body main .background .todo-list {
-  background-color: #525252;
-  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
-  position: relative;
-  padding-bottom: 50px;
-  border-radius: 8px;
-  -webkit-box-shadow: 0px 25px 35px 15px rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 25px 35px 15px rgba(0, 0, 0, 0.2);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-body main .background .todo-list .tittle {
-  background-color: #525252;
-  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+body main .background .todo-list .el-container .tittle {
+  margin-bottom: 18px;
   color: #fff;
   line-height: 1.4;
-  width: 100%;
-  padding: 50px 18px 25px;
 }
 
-body main .background .todo-list .tittle .project-name span {
+body main .background .todo-list .el-container .tittle .project-name span {
   font-size: 0.8em;
   font-weight: 400;
 }
 
-body main .background .todo-list .tittle .tittle-name h1 {
+body main .background .todo-list .el-container .tittle .tittle-name h1 {
   font-size: 2.4em;
   font-weight: 700;
 }
 
-body main .background .todo-list .tittle .tittle-name span {
+body main .background .todo-list .el-container .tittle .tittle-name span {
   font-size: 1em;
   font-weight: 400;
 }
 
-body main .background .todo-list .task-nav {
-  background-color: #525252;
-  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+body main .background .todo-list .el-container .task-nav {
   position: relative;
-  width: 100%;
-  padding: 18px 25px;
-  border-bottom: 1px solid #999;
-  -webkit-box-shadow: 0 5px 10px rgba(14, 21, 37, 0.5);
-          box-shadow: 0 5px 10px rgba(14, 21, 37, 0.5);
-  z-index: 111;
 }
 
-body main .background .todo-list .task-nav .task-input {
+body main .background .todo-list .el-container .task-nav .task-input {
   position: relative;
   height: 52px;
 }
 
-body main .background .todo-list .task-nav .task-input input {
-  font-size: 18px;
-  height: 100%;
+body main .background .todo-list .el-container .task-nav .task-input input {
+  background: #fff;
   width: 100%;
+  height: 100%;
   padding: 0 20px 0 53px;
-  border: 1px solid #999;
+  border: none;
   border-radius: 5px;
+  -webkit-box-shadow: 0 -1px 0px 0 rgba(160, 160, 160, 0.4), inset 0 3px 3px 0 rgba(0, 0, 0, 0.4);
+          box-shadow: 0 -1px 0px 0 rgba(160, 160, 160, 0.4), inset 0 3px 3px 0 rgba(0, 0, 0, 0.4);
+  font-size: 18px;
 }
 
-body main .background .todo-list .task-nav .task-input input :focus {
+body main .background .todo-list .el-container .task-nav .task-input input :focus {
   outline: #3c87ff;
   color: #3c87ff;
 }
 
-body main .background .todo-list .task-nav .task-input input::-webkit-input-placeholder {
+body main .background .todo-list .el-container .task-nav .task-input input::-webkit-input-placeholder {
   color: #bfbfbf;
 }
 
-body main .background .todo-list .task-nav .task-input input:-ms-input-placeholder {
+body main .background .todo-list .el-container .task-nav .task-input input:-ms-input-placeholder {
   color: #bfbfbf;
 }
 
-body main .background .todo-list .task-nav .task-input input::-ms-input-placeholder {
+body main .background .todo-list .el-container .task-nav .task-input input::-ms-input-placeholder {
   color: #bfbfbf;
 }
 
-body main .background .todo-list .task-nav .task-input input::placeholder {
+body main .background .todo-list .el-container .task-nav .task-input input::placeholder {
   color: #bfbfbf;
 }
 
-body main .background .todo-list .task-nav .task-input i {
+body main .background .todo-list .el-container .task-nav .task-input i {
   position: absolute;
   top: 50%;
   -webkit-transform: translate(17px, -50%);
           transform: translate(17px, -50%);
 }
 
-body main .background .todo-list .controls {
-  color: #fff;
+body main .background .todo-list .el-container .controls {
   margin-top: 18px;
+  color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -227,7 +166,7 @@ body main .background .todo-list .controls {
           justify-content: space-between;
 }
 
-body main .background .todo-list .controls .fillters span {
+body main .background .todo-list .el-container .controls .fillters span {
   color: #999999;
   font-size: 1em;
   font-weight: 400;
@@ -240,17 +179,17 @@ body main .background .todo-list .controls .fillters span {
   cursor: pointer;
 }
 
-body main .background .todo-list .controls .fillters span:first-child {
+body main .background .todo-list .el-container .controls .fillters span:first-child {
   margin-left: 0;
 }
 
-body main .background .todo-list .controls .fillters span.active {
+body main .background .todo-list .el-container .controls .fillters span.active {
   color: #fff;
   -webkit-box-shadow: 0 5px 10px rgba(14, 21, 37, 0.6);
           box-shadow: 0 5px 10px rgba(14, 21, 37, 0.6);
 }
 
-body main .background .todo-list .controls .clear-btn {
+body main .background .todo-list .el-container .controls .clear-btn {
   background: transparent;
   color: #999999;
   font-size: 1em;
@@ -263,53 +202,53 @@ body main .background .todo-list .controls .clear-btn {
   cursor: pointer;
 }
 
-body main .background .todo-list .controls .clear-btn:hover {
+body main .background .todo-list .el-container .controls .clear-btn:hover {
   color: #fff;
   -webkit-box-shadow: 0 5px 10px rgba(14, 21, 37, 0.6);
           box-shadow: 0 5px 10px rgba(14, 21, 37, 0.6);
 }
 
+body main .background .todo-list .el-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background: -webkit-gradient(linear, left bottom, left top, from(#3c3c3c), to(#1e1e1e));
+  background: linear-gradient(0deg, #3c3c3c 0%, #1e1e1e 100%);
+  width: calc((100% + 4px));
+  height: 30px;
+  border-bottom: 1px dashed #999999;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  -webkit-box-shadow: inset 0 1px 1px 0 rgba(160, 160, 160, 0.4), inset -1px 0 1px 0 rgba(160, 160, 160, 0.4);
+          box-shadow: inset 0 1px 1px 0 rgba(160, 160, 160, 0.4), inset -1px 0 1px 0 rgba(160, 160, 160, 0.4);
+}
+
+body main .background .todo-list .el-container::after {
+  content: "";
+  position: absolute;
+  top: 31px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#3c3c3c), to(#1e1e1e));
+  background: linear-gradient(180deg, #3c3c3c 0%, #1e1e1e 100%);
+  width: calc((100% + 4px));
+  height: 10px;
+  -webkit-box-shadow: inset 0 -1px 1px 0 rgba(160, 160, 160, 0.4), inset -1px 0 1px 0 rgba(160, 160, 160, 0.4), 0 5px 5px rgba(20, 20, 20, 0.8);
+          box-shadow: inset 0 -1px 1px 0 rgba(160, 160, 160, 0.4), inset -1px 0 1px 0 rgba(160, 160, 160, 0.4), 0 5px 5px rgba(20, 20, 20, 0.8);
+}
+
 body main .background .todo-list .lists-container {
-  background: #fff;
-  width: 480px;
+  background: linear-gradient(45deg, #fdff8a 0%, #feffc2 30%, #feffc2 70%, #fdff8a 100%);
+  width: calc(100% - 2px);
   margin: 0 auto;
-}
-
-body main .background .todo-list .lists-container .controls,
-body main .background .todo-list .lists-container li {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-body main .background .todo-list .lists-container .task-box:before {
-  content: "";
-  background: rgba(214, 0, 0, 0.4);
-  position: absolute;
-  top: 0;
-  left: 90px;
-  width: 1px;
-  height: 100%;
-}
-
-body main .background .todo-list .lists-container .task-box:after {
-  content: "";
-  background: rgba(214, 0, 0, 0.4);
-  position: absolute;
-  top: 0;
-  left: 93px;
-  width: 1px;
-  height: 100%;
+  z-index: 9999;
 }
 
 body main .background .todo-list .lists-container .task-box {
-  background: #fdff8a;
   position: relative;
   padding: 20px 25px;
 }
@@ -325,6 +264,9 @@ body main .background .todo-list .lists-container .task-box .task {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 body main .background .todo-list .lists-container .task-box .task label {
@@ -371,14 +313,20 @@ body main .background .todo-list .lists-container .task-box .task .settings .tas
           transform: scale(0);
   -webkit-transform-origin: top right;
           transform-origin: top right;
-  z-index: 333;
+  z-index: 999;
 }
 
 body main .background .todo-list .lists-container .task-box .task .settings .task-menu li {
   height: 25px;
-  font-size: 16px;
   padding: 17px 15px;
   margin-bottom: 2px;
+  font-size: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
@@ -412,5 +360,38 @@ body main .background .todo-list .lists-container .task-box .no-task {
   font-family: "Handlee", cursive;
   font-size: 1.2em;
   margin-left: 98px;
+}
+
+body main .background .todo-list .lists-container .task-box:before {
+  content: "";
+  background: rgba(214, 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+  left: 90px;
+  width: 1px;
+  height: 100%;
+}
+
+body main .background .todo-list .lists-container .task-box:after {
+  content: "";
+  background: rgba(214, 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+  left: 93px;
+  width: 1px;
+  height: 100%;
+}
+
+body main .background .todo-list .list-bottom-end {
+  background-color: #525252;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+  width: 100%;
+  height: 30px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  -webkit-box-shadow: inset -1px 0 1px 0 rgba(160, 160, 160, 0.4), 0 1px 0 0 rgba(160, 160, 160, 0.4), 0 -3px 3px 0 rgba(0, 0, 0, 0.3), 0 -8px 8px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: inset -1px 0 1px 0 rgba(160, 160, 160, 0.4), 0 1px 0 0 rgba(160, 160, 160, 0.4), 0 -3px 3px 0 rgba(0, 0, 0, 0.3), 0 -8px 8px 0 rgba(0, 0, 0, 0.2);
+  display: block;
+  z-index: 888;
 }
 /*# sourceMappingURL=todoList.css.map */
