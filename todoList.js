@@ -41,7 +41,7 @@ function showTodo(fillter) {
             }
         });
     }
-    // if li isnt empty, insert this value inside taskbox else insert span
+    // if li is not empty, insert this value inside taskbox else insert span
     taskBox.innerHTML = li || `<span class="no-task">You don't have any task here.</span>`;
 }
 showTodo("all");
@@ -112,7 +112,7 @@ taskInput.addEventListener("keyup", e => {
     let userTask = taskInput.value.trim();
     if (e.key == "Enter" && userTask) {
         if (!isEditedTask) {
-            // push new task if isEditedTask isnt true
+            // push new task if isEditedTask is not true
             if (!todos) {
                 // if todo is not exist, pass an empty array to todos
                 todos = [];
@@ -123,7 +123,7 @@ taskInput.addEventListener("keyup", e => {
             };
             todos.push(taskInfo); // Adding new task to todos
         } else {
-            // edit task if isEditedTask isnt false
+            // edit task if isEditedTask is not false
             isEditedTask = false;
             todos[editId].name = userTask;
         }
