@@ -112,9 +112,9 @@ taskInput.addEventListener("keyup", e => {
     let userTask = taskInput.value.trim();
     if (e.key == "Enter" && userTask) {
         if (!isEditedTask) {
-            //if isEditedTask isnt true
+            // push new task if isEditedTask isnt true
             if (!todos) {
-                // if todo isnt exist, pass an empty array to todos
+                // if todo is not exist, pass an empty array to todos
                 todos = [];
             }
             let taskInfo = {
@@ -123,7 +123,8 @@ taskInput.addEventListener("keyup", e => {
             };
             todos.push(taskInfo); // Adding new task to todos
         } else {
-            isEditedTask = true;
+            // edit task if isEditedTask isnt false
+            isEditedTask = false;
             todos[editId].name = userTask;
         }
         if (!document.getElementById("all").classList.contains("active")) {
