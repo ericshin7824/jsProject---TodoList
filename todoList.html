@@ -5,55 +5,43 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Todo list with Javascript</title>
-        <link rel="stylesheet" href="todoList.css" />
+        <link rel="stylesheet" href="./todoList.css" />
         <script src="https://kit.fontawesome.com/2310046e07.js" crossorigin="anonymous"></script>
     </head>
     <body>
-        <header>
-            <div class="nav-wrapper">
-                <div class="nav max-width">
-                    <a class="logo" href="">
-                        <h1>hoon.</h1>
-                    </a>
-                </div>
-            </div>
-        </header>
+        <nav>
+            <a class="logo" href="https://www.erichoonshin.com/">Hn.</a>
+        </nav>
         <main>
-            <section class="background">
-                <div class="todo-list">
-                    <div class="el-container">
-                        <div class="tittle">
-                            <div class="project-name">
-                                <span>Javascript project</span>
-                            </div>
-                            <div class="tittle-name">
-                                <h1>TODO LIST</h1>
-                                <span>Stored in LocalStorage</span>
-                            </div>
+            <div class="todo-list">
+                <div class="el-container">
+                    <div class="tittle">
+                        <span>Javascript project</span>
+                        <h1>TODO LIST</h1>
+                        <span>Stored in LocalStorage</span>
+                    </div>
+                    <div class="task-nav">
+                        <div class="task-input">
+                            <i class="fas fa-align-left"></i>
+                            <input id="focus" type="text" placeholder="Add a new task" />
                         </div>
-                        <div class="task-nav">
-                            <div class="task-input">
-                                <i class="fas fa-align-left"></i>
-                                <input id="focus" type="text" placeholder="Add a new task" />
+                        <div class="controls">
+                            <div class="fillters">
+                                <span id="all" class="active">All</span>
+                                <span id="pending">Pending</span>
+                                <span id="completed">Completed</span>
                             </div>
-                            <div class="controls">
-                                <div class="fillters">
-                                    <span id="all" class="active">All</span>
-                                    <span id="pending">Pending</span>
-                                    <span id="completed">Completed</span>
-                                </div>
-                                <button class="clear-btn">Clear All</button>
-                            </div>
+                            <button class="clear-btn"><span>Clear All</span></button>
                         </div>
                     </div>
-                    <div class="lists-container">
-                        <ul class="task-box"></ul>
-                    </div>
-                    <span class="list-bottom-end"></span>
                 </div>
-            </section>
+                <div class="lists-container">
+                    <ul class="task-box"></ul>
+                </div>
+                <span class="list-bottom-end"></span>
+            </div>
         </main>
 
-        <script src="todoList.js"></script>
+        <script src="./todoList.js"></script>
     </body>
 </html>
